@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#4f46e5">
+  <title>StudyTask | Student Task Manager</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="header">
+    <div class="brand-row">
+  <div class="brand">StudyTask</div>
+  <button id="darkModeButton" type="button">
+    🌙 Dark mode
+  </button>
+</div>
+  </header>
+
+  <main class="container">
+    <section class="welcome">
+      <h1>My Tasks</h1>
+      <p>Plan your work. Stay on track.</p>
+    </section>
+
+    <section class="stats" aria-label="Task summary">
+      <div class="stat-card">
+        <span>Total tasks</span>
+        <strong id="totalTasks">0</strong>
+      </div>
+      <div class="stat-card">
+        <span>Pending</span>
+        <strong id="pendingTasks">0</strong>
+      </div>
+      <div class="stat-card">
+        <span>Completed</span>
+        <strong id="completedTasks">0</strong>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Add a new task</h2>
+
+      <form id="taskForm">
+        <div class="field">
+          <label for="taskTitle">Task title</label>
+          <input
+            id="taskTitle"
+            type="text"
+            placeholder="e.g. Complete ICT assignment"
+            required
+            maxlength="120"
+          >
+        </div>
+
+        <div class="field">
+          <label for="taskSubject">Subject</label>
+          <input
+            id="taskSubject"
+            type="text"
+            placeholder="e.g. Computer Studies"
+            required
+            maxlength="60"
+          >
+        </div>
+
+        <div class="field">
+          <label for="taskDate">Due date</label>
+          <input id="taskDate" type="date" required>
+        </div>
+
+        <button type="submit" class="add-button">+ Add Task</button>
+      </form>
+    </section>
+
+    <section class="panel">
+      <div class="task-heading">
+        <h2>My task list</h2>
+        <label class="filter-label" for="taskFilter">Show:</label>
+        <input
+           id="taskSearch"
+           type="search"
+           placeholder="Search task..."
+           aria-label="Search tasks by title or subject"
+        >
+
+        <label class="filter-label" for="taskFilter">Show:</label>
+        <select id="taskFilter"></select>
+          <option value="all">All>All tasks</option>
+          <option value="pending">Pending</option>
+          <option value="completed">Completed</option>
+         </select>
+      </div>
+
+      <p id="taskMessage" class="message" role="status" aria-live="polite"></p>
+      <ul id="taskList" class="task-list"></ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>StudyTask &copy; 2026 | Keep learning!</p>
+  </footer>
+</body>
+</html>
